@@ -96,3 +96,10 @@ def is_gif(file):
     if not is_video(file):
         return False
     return DocumentAttributeAnimated() in getattr(file, "document", file).attributes
+
+
+__help__ = """
+/whatanime - Recognize The Name Of The Anime
+"""
+
+__mod_name__ = "WhatAnime"
