@@ -190,6 +190,11 @@ def manga(update: Update, context: CallbackContext):
 
 __mod_name__ = "MyAnimeList"
 
+__help__ = """
+/manime <query> = Gives you anime info from Anilist
+/mmanga <query> = Gives yoy manga info From Anilist
+"""
+
 
 ANIME_HANDLER = CommandHandler("manime", anime, pass_args=True, run_async=True)
 CHARACTER_HANDLER = CommandHandler(
