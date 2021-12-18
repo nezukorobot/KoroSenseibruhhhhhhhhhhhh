@@ -9,7 +9,7 @@ from EmikoRobot.utils.permissions import adminsOnly
 from EmikoRobot.ex_plugins.dbfunctions import is_nsfw_on, nsfw_off, nsfw_on
 from EmikoRobot.utils.filter_groups import nsfw_detect_group
 
-__mod_name__ = "Anti-NSFW​"
+__mod_name__ = "Anti-NSFW"
 
 async def get_file_id_from_message(message):
     file_id = None
@@ -164,3 +164,8 @@ async def nsfw_enable_disable(_, message):
         await message.reply_text(
             "`Unknown Suffix, Use /antinsfw [enable|disable]`"
         )
+
+__help__ = """
+/antinsfw on - Turns on antinsfw in your group
+/antinsfw off - Turns off antinsfw in your group
+"""
