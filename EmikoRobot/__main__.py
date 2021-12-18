@@ -82,7 +82,7 @@ def get_readable_time(seconds: int) -> str:
 
 PM_START_TEXT = """
 *Hello {} !*
-✪ I'm an anime-theme management bot [✨](https://telegra.ph/file/11b5922a33de9968cedfe.jpg)
+ I'm an anime-theme management bot [❤️](https://telegra.ph/file/12b27bd51f3d1efaddb2f.mp4)
 ────────────────────────
 × *Uptime:* `{}`
 × `{}` *users, across* `{}` *chats.*
@@ -91,26 +91,30 @@ PM_START_TEXT = """
 """
 
 buttons = [
-    [
-        InlineKeyboardButton(text="About Emiko Robot", callback_data="emiko_"),
-    ],
-    [
-        InlineKeyboardButton(text="Get Help", callback_data="help_back"),
-        InlineKeyboardButton(
-            text="Try inline!​​", switch_inline_query_current_chat=""
-        ),
-    ],
-    [
-        InlineKeyboardButton(
-            text="➗ Add Emiko To Your Group ➗", url="t.me/EmiexRobot?startgroup=new"),
-    ],
+   [
+                        InlineKeyboardButton(
+                            text=f"Add Lelouch To Your Group",
+                            url=f"t.me/LelouchXRobot?startgroup=true")
+                    ],
+                   [
+                       InlineKeyboardButton(text="🔍Help", callback_data="help_back"),
+                       InlineKeyboardButton(text="❔ Guide", url="https://t.me/Lelouch_update_channel/8"),
+                     ],
+                    [                  
+                       InlineKeyboardButton(
+                             text="🧰 Support",
+                             url=f"https://t.me/lelouchsupportchat"),
+                       InlineKeyboardButton(
+                             text="⚙️ Updates",
+                             url=f"https://t.me/Lelouch_update_channel")
+                     ], 
+   
 ]
-
 
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-EMI_IMG = "https://telegra.ph/file/5ff1cb39902809148f07f.jpg"
+EMI_IMG = "https://telegra.ph/file/94f6eeed7eb44033f3f6e.mp4"
 
 DONATE_STRING = """Heya, glad to hear you want to donate!
  You can support the project by contacting @excrybaby \
