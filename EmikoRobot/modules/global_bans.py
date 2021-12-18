@@ -101,16 +101,16 @@ def gban(update: Update, context: CallbackContext):
 
     if int(user_id) in DEMONS:
         message.reply_text(
-            "OOOH someone's trying to gban a Demon Disaster! *grabs popcorn*",
+            "OOOH someone's trying to gban a Bishop Disaster! *grabs popcorn*",
         )
         return
 
     if int(user_id) in TIGERS:
-        message.reply_text("That's a Tiger! They cannot be banned!")
+        message.reply_text("I have given that my person my Lelouch Supremecy! They cannot be banned!")
         return
 
     if int(user_id) in WOLVES:
-        message.reply_text("That's a Wolf! They cannot be banned!")
+        message.reply_text("I have given that my person my Lelouch Supremecy! They cannot be banned!")
         return
 
     if user_id == bot.id:
