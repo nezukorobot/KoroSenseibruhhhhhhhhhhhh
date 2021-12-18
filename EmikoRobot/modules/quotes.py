@@ -4,9 +4,11 @@ from traceback import format_exc
 from pyrogram import filters
 from pyrogram.types import Message
 
-from EmikoRobot import arq
-from EmikoRobot.utils.errors import capture_err
-from EmikoRobot import pbot as app
+from TGNRobot import arq
+from TGNRobot.pyrogramee.errors import capture_err
+from TGNRobot import pbot as app
+
+
 
 
 async def quotify(messages: list):
@@ -101,3 +103,7 @@ async def quotly_func(client, message: Message):
 
 
 __mod_name__ = "Quotly"
+
+__help__ = """
+/q - Quotes a message
+"""
