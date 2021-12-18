@@ -12,8 +12,7 @@ __help__ = """
 ❂ /unauth - Canceling or deleting from authorized users list.
 ❂ /msettings - To open panel settings on musicplayer.
 ❂ /setadmin - To set all command only for admins.
-❂ /setmember - Set all command for all members.
-❂ /vol (range 1-200) - To set volume on voice calls.
+❂ Most Imp Add @lelouch_voiceassistant to Your Group
 
-NOTE : DON'T SPAMMING AT REQUEST SONG OR VIDEO...
+
 """
