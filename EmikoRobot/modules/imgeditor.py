@@ -456,3 +456,4 @@ __help__ = """
 Here is the Img Editor module for Lelouch
 /edit - To edit an image
 /rmbg- To remove background from image
+"""
