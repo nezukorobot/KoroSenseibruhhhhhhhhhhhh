@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.types import Message
 
 from EmikoRobot import arq
-from EmikoRobot.pyrogramee.errors import capture_err
+from EmikoRobot.utils.errors import capture_err
 from EmikoRobot import pbot as app
 
 
