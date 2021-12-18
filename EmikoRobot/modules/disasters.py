@@ -72,16 +72,16 @@ def addsudo(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        message.reply_text("This member is already a the Emperor")
+        message.reply_text("This member is already a the King Bruhhh")
         return ""
 
     if user_id in DEMONS:
-        rt += "Succesfully raised Captain to Emperor."
+        rt += "Succesfully raised to King."
         data["supports"].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        rt += "Succesfully raised Soldier to Emperor."
+        rt += "Succesfully raised Pawn ."
         data["whitelists"].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -93,7 +93,7 @@ def addsudo(update: Update, context: CallbackContext) -> str:
 
     update.effective_message.reply_text(
         rt
-        + "\nSuccessfully raised {} to Emperor!".format(
+        + "\nSuccessfully raised {} to King!".format(
             user_member.first_name,
         ),
     )
@@ -133,16 +133,16 @@ def addsupport(
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "Demote this Emperor to Captain"
+        rt += "Demote this King to Pawn"
         data["sudos"].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        message.reply_text("This user is already Captain.")
+        message.reply_text("This user is already in my Disaser level.")
         return ""
 
     if user_id in WOLVES:
-        rt += "Succesfully raised Soldier to Captain"
+        rt += "Succesfully raised Pawn To king"
         data["whitelists"].remove(user_id)
         WOLVES.remove(user_id)
 
@@ -153,7 +153,7 @@ def addsupport(
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\n{user_member.first_name} was added as a Captain!",
+        rt + f"\n{user_member.first_name} was added as a Pawn!",
     )
 
     log_message = (
@@ -188,17 +188,17 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         data = json.load(infile)
 
     if user_id in DRAGONS:
-        rt += "This member is a Emperor, Demoting to Soldier."
+        rt += "This member is a King, Demoting to Pawn."
         data["sudos"].remove(user_id)
         DRAGONS.remove(user_id)
 
     if user_id in DEMONS:
-        rt += "This user is already a Captain, Demoting to Soldier."
+        rt += "Hmmm Hehe Demoting this user"
         data["supports"].remove(user_id)
         DEMONS.remove(user_id)
 
     if user_id in WOLVES:
-        message.reply_text("This user is already in Soldier.")
+        message.reply_text("This user is already in my Disaster Level")
         return ""
 
     data["whitelists"].append(user_id)
@@ -208,7 +208,7 @@ def addwhitelist(update: Update, context: CallbackContext) -> str:
         json.dump(data, outfile, indent=4)
 
     update.effective_message.reply_text(
-        rt + f"\nSuccessfully raised {user_member.first_name} to be a Soldier!",
+        rt + f"\nSuccessfully raised {user_member.first_name} to be a Pawn",
     )
 
     log_message = (
@@ -536,7 +536,7 @@ def devlist(update: Update, context: CallbackContext):
     m.edit_text(reply, parse_mode=ParseMode.HTML)
 
 
-SUDO_HANDLER = CommandHandler(("addsudo", "addemperor"), addsudo, run_async=True)
+SUDO_HANDLER = CommandHandler(("addsudo", "addking"), addsudo, run_async=True)
 SUPPORT_HANDLER = CommandHandler(("addsupport", "addcaptain"), addsupport, run_async=True)
 TIGER_HANDLER = CommandHandler(("addsoldier"), addtiger, run_async=True)
 WHITELIST_HANDLER = CommandHandler(
