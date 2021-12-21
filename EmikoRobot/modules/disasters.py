@@ -445,7 +445,7 @@ def removetiger(update: Update, context: CallbackContext) -> str:
 
 @whitelist_plus
 def whitelistlist(update: Update, context: CallbackContext):
-    reply = "<b>Known the Trader 🧜:</b>\n"
+    reply = "<b>This users has my supremacy:</b>\n"
     m = update.effective_message.reply_text(
         "<code>Gathering intel..</code>",
         parse_mode=ParseMode.HTML,
@@ -506,7 +506,7 @@ def sudolist(update: Update, context: CallbackContext):
         parse_mode=ParseMode.HTML,
     )
     true_sudo = list(set(DRAGONS) - set(DEV_USERS))
-    reply = "<b>Known the Emperor 🧞‍♀:</b>\n"
+    reply = "<b>This users have my supremacy 🧞‍♀:</b>\n"
     for each_user in true_sudo:
         user_id = int(each_user)
         try:
@@ -559,8 +559,8 @@ TIGERLIST_HANDLER = CommandHandler(["trader"], tigerlist, run_async=True)
 SUPPORTLIST_HANDLER = CommandHandler(
     ["supportlist", "captain"], supportlist, run_async=True
 )
-SUDOLIST_HANDLER = CommandHandler(["sudolist", "emperor"], sudolist, run_async=True)
-DEVLIST_HANDLER = CommandHandler(["devlist", "kingdom"], devlist, run_async=True)
+SUDOLIST_HANDLER = CommandHandler(["sudolist", "king"], sudolist, run_async=True)
+DEVLIST_HANDLER = CommandHandler(["devlist", "bishop"], devlist, run_async=True)
 
 dispatcher.add_handler(SUDO_HANDLER)
 dispatcher.add_handler(SUPPORT_HANDLER)
