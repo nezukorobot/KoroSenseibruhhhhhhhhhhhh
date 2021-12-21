@@ -62,3 +62,4 @@ __help__ = """
 
 /tagall - Tags Everyone in group
 @all - Tags Everyone in group
+"""
