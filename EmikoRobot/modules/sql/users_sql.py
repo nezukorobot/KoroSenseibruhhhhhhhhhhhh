@@ -5,13 +5,13 @@ from EmikoRobot.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,
-    Integer,
-    BigInteger,
     String,
     UnicodeText,
+    Integer,
     UniqueConstraint,
     func,
 )
+from sqlalchemy.sql.sqltypes import BigInteger
 
 
 class Users(BASE):
@@ -50,7 +50,7 @@ class ChatMembers(BASE):
         nullable=False,
     )
     user = Column(
-        Integer,
+        BigInteger,
         ForeignKey("users.user_id", onupdate="CASCADE", ondelete="CASCADE"),
         nullable=False,
     )
