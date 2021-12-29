@@ -60,7 +60,7 @@ async def detect_nsfw(_, message):
     file_id = await get_file_id_from_message(message)
     if not file_id:
         return
-    file = await pgram.download_media(file_id)
+    file = await pbot.download_media(file_id)
     try:
         results = await arq.nsfw_scan(file=file)
     except Exception:
