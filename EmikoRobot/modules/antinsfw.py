@@ -118,7 +118,7 @@ async def nsfw_scan_command(_, message):
     file_id = await get_file_id_from_message(reply)
     if not file_id:
         return await m.edit("Something wrong happened.")
-    file = await pgram.download_media(file_id)
+    file = await pbot.download_media(file_id)
     try:
         results = await arq.nsfw_scan(file=file)
     except Exception:
