@@ -4,7 +4,7 @@ from pyrogram import filters
 from EmikoRobot import DRAGONS, BOT_USERNAME, arq, pbot
 from EmikoRobot.utils.errors import capture_err
 from EmikoRobot.utils.permissions import adminsOnly
-from EmikoRobot.ex_pluhins.dbfunctions import is_nsfw_on, nsfw_off, nsfw_on
+from EmikoRobot.ex_plugins.dbfunctions import is_nsfw_on, nsfw_off, nsfw_on
 
 
 async def get_file_id_from_message(message):
