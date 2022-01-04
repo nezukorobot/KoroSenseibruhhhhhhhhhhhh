@@ -16,7 +16,7 @@
 import threading
 
 from sqlalchemy import Column, Integer, UnicodeText
-from EmikoRobot import SESSION, BASE
+from EmikoRobot.modules.sql import SESSION, BASE
 
 
 class SpotifyCreds(BASE):
