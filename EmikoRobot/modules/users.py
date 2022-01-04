@@ -8,6 +8,7 @@ from telegram.ext import (
     CommandHandler,
     Filters,
     MessageHandler,
+    run_async,
 )
 
 import EmikoRobot.modules.sql.users_sql as sql
@@ -33,23 +34,26 @@ def get_user_id(username):
     if not users:
         return None
 
-    if len(users) == 1:
+    elif len(users) == 1:
         return users[0].user_id
-    for user_obj in users:
-        try:
-            userdat = dispatcher.bot.get_chat(user_obj.user_id)
-            if userdat.username == username:
-                return userdat.id
 
-        except BadRequest as excp:
-            if excp.message == "Chat not found":
-                pass
-            else:
-                LOGGER.exception("Error extracting user ID")
+    else:
+        for user_obj in users:
+            try:
+                userdat = dispatcher.bot.get_chat(user_obj.user_id)
+                if userdat.username == username:
+                    return userdat.id
+
+            except BadRequest as excp:
+                if excp.message == "Chat not found":
+                    pass
+                else:
+                    LOGGER.exception("Error extracting user ID")
 
     return None
 
 
+@run_async
 @dev_plus
 def broadcast(update: Update, context: CallbackContext):
     to_send = update.effective_message.text.split(None, 1)
@@ -92,10 +96,11 @@ def broadcast(update: Update, context: CallbackContext):
                 except TelegramError:
                     failed_user += 1
         update.effective_message.reply_text(
-            f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}.",
+            f"Broadcast complete.\nGroups failed: {failed}.\nUsers failed: {failed_user}."
         )
 
 
+@run_async
 def log_user(update: Update, context: CallbackContext):
     chat = update.effective_chat
     msg = update.effective_message
@@ -114,6 +119,7 @@ def log_user(update: Update, context: CallbackContext):
         sql.update_user(msg.forward_from.id, msg.forward_from.username)
 
 
+@run_async
 @sudo_plus
 def chats(update: Update, context: CallbackContext):
     all_chats = sql.get_all_chats() or []
@@ -125,10 +131,7 @@ def chats(update: Update, context: CallbackContext):
             bot_member = curr_chat.get_member(context.bot.id)
             chat_members = curr_chat.get_members_count(context.bot.id)
             chatfile += "{}. {} | {} | {}\n".format(
-                P,
-                chat.chat_name,
-                chat.chat_id,
-                chat_members,
+                P, chat.chat_name, chat.chat_id, chat_members
             )
             P = P + 1
         except:
@@ -143,6 +146,7 @@ def chats(update: Update, context: CallbackContext):
         )
 
 
+@run_async
 def chat_checker(update: Update, context: CallbackContext):
     bot = context.bot
     try:
@@ -154,15 +158,15 @@ def chat_checker(update: Update, context: CallbackContext):
 
 def __user_info__(user_id):
     if user_id in [777000, 1087968824]:
-        return """╘═━「 Groups count: <code>???</code> 」"""
+        return """╘══「 Groups count: <code>???</code> 」"""
     if user_id == dispatcher.bot.id:
-        return """╘═━「 Groups count: <code>???</code> 」"""
+        return """╘══「 Groups count: <code>???</code> 」"""
     num_chats = sql.get_user_num_chats(user_id)
-    return f"""╘═━「 Groups count: <code>{num_chats}</code> 」"""
+    return f"""╘══「 Groups count: <code>{num_chats}</code> 」"""
 
 
 def __stats__():
-    return f"× {sql.num_users()} users, across {sql.num_chats()} chats"
+    return f"• {sql.num_users()} users, across {sql.num_chats()} chats"
 
 
 def __migrate__(old_chat_id, new_chat_id):
@@ -172,17 +176,11 @@ def __migrate__(old_chat_id, new_chat_id):
 __help__ = ""  # no help string
 
 BROADCAST_HANDLER = CommandHandler(
-    ["broadcastall", "broadcastusers", "broadcastgroups"],
-    broadcast,
-    run_async=True,
+    ["broadcastall", "broadcastusers", "broadcastgroups"], broadcast
 )
-USER_HANDLER = MessageHandler(
-    Filters.all & Filters.chat_type.groups, log_user, run_async=True
-)
-CHAT_CHECKER_HANDLER = MessageHandler(
-    Filters.all & Filters.chat_type.groups, chat_checker, run_async=True
-)
-CHATLIST_HANDLER = CommandHandler("groups", chats, run_async=True)
+USER_HANDLER = MessageHandler(Filters.all & Filters.group, log_user)
+CHAT_CHECKER_HANDLER = MessageHandler(Filters.all & Filters.group, chat_checker)
+CHATLIST_HANDLER = CommandHandler("groups", chats)
 
 dispatcher.add_handler(USER_HANDLER, USERS_GROUP)
 dispatcher.add_handler(BROADCAST_HANDLER)
