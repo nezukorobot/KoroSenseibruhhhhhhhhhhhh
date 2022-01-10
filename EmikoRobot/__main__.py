@@ -116,10 +116,7 @@ Click on the button bellow to get description about specifics command."""
 
 EMI_IMG = "https://telegra.ph/file/94f6eeed7eb44033f3f6e.mp4"
 
-DONATE_STRING = """Heya, glad to hear you want to donate!
- You can support the project by contacting @excrybaby \
- Supporting isnt always financial! \
- Those who cannot provide monetary support are welcome to help us develop the bot at ."""
+DONATE_STRING = """i m free."""
 
 IMPORTED = {}
 MIGRATEABLE = []
