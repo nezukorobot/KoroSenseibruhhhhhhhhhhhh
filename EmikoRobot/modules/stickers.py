@@ -16,7 +16,7 @@ from telegram import Update
 from telegram.ext import CallbackContext
 from telegram.utils.helpers import mention_html
 
-from EmikpRobot import dispatcher
+from EmikoRobot import dispatcher
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
 from EmikoRobot.modules.helper_funcs.alternate import typing_action
 
