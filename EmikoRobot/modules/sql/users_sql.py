@@ -5,7 +5,7 @@ from EmikoRobot.modules.sql import BASE, SESSION
 from sqlalchemy import (
     Column,
     ForeignKey,
-    Integer,
+    BigInteger,
     String,
     UnicodeText,
     UniqueConstraint,
