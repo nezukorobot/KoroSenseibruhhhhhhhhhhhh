@@ -71,7 +71,7 @@ def no_longer_afk(update: Update, context: CallbackContext):
                 "{} is now awake from his eternal slumber!",
                 "once again {} has arrived in gc !",
                 "tera dhyan kidhar ha tera hero({}) idhar ha ",
-                " Everyone run {} has arrived",
+                " Everyone runnnn!!!!! {} has arrived",
                
               ]
             chosen_option = random.choice(options)
