@@ -30,12 +30,12 @@ async def lego(event):
     fname2 = "Kazuko.png"
     img.save(fname2, "png")
     await memek.edit("`Uploading`")
-    await tbot.send_file(event.chat_id, fname2, caption="Made By @KazukoRobot")
+    await tbot.send_file(event.chat_id, fname2, caption="Made By @lelouchXRobot")
     if os.path.exists(fname2):
             os.remove(fname2)
             await memek.delete()
  except Exception as e:
-   await event.reply(f'Error Report @CFC_BOT_support, {e}')
+   await event.reply(f'Error Report @lelouchsupportchat, {e}')
 
 
 file_help = os.path.basename(__file__)
@@ -46,10 +46,8 @@ file_helpo = file_help.replace("_", " ")
 __help__ = """
  ❍ /logo text :  Create your logo with your name
  """
-__mod_name__ = "Logo"import os
-from KazukoBot.events import register
-from KazukoBot import telethn as tbot
-from PIL import Image, ImageDraw, ImageFont
+__mod_name__ = "Logo"
+
 
 
 @register(pattern="^/logo ?(.*)")
