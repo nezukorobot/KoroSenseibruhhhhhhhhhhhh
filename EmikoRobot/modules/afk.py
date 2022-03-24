@@ -67,11 +67,11 @@ def no_longer_afk(update: Update, context: CallbackContext):
             options = [
                 "{} is here finally to get roasted again!",
                 "{} is back in the chat once again!",
-                "{} oh ye Group's mc has arrived  !",
+                "{} oh ye Group's hero has arrived  !",
                 "{} is now awake from his eternal slumber!",
                 "once again {} has arrived in gc !",
                 "tera dhyan kidhar ha tera hero({}) idhar ha ",
-                " Everyone runnnn!!!!! {} chutiya has arrived",
+                " Everyone runnnn!!!!! {} has arrived",
                
               ]
             chosen_option = random.choice(options)
