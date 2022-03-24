@@ -1,5 +1,5 @@
 """
-Fully Written by RoseLoverX
+Fu
 """
 from EmikoRobotimport telethn as tbot
 from EmikoRobot.Callbacks.feds import *
