@@ -1,7 +1,7 @@
 """
 Fully
 """
-from EmikoRobotimport telethn as tbot
+from EmikoRobot import telethn as tbot
 from EmikoRobot.Callbacks.feds import *
 from EmikoRobot import OWNER_ID, BOT_ID, dispatcher
 import os, re, csv, json, time, uuid, pytz
