@@ -3,7 +3,7 @@ Fully Written by RoseLoverX
 """
 from EmikoRobot import telethn as tbot
 from EmikoRobot.module.fedfunction import *
-from TeamIndia import OWNER_ID, BOT_ID, dispatcher
+from EmikoRobot import OWNER_ID, BOT_ID, dispatcher
 import os, re, csv, json, time, uuid, pytz
 from datetime import datetime
 from io import BytesIO
