@@ -1,5 +1,5 @@
 """
-Fu
+Fully
 """
 from EmikoRobotimport telethn as tbot
 from EmikoRobot.Callbacks.feds import *
