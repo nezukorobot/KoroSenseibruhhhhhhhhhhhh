@@ -918,7 +918,8 @@ def button(update: Update, context: CallbackContext) -> str:
         )
         return ""
 
-  @connection_status
+
+@connection_status
 def bug_reporting(update: Update, _: CallbackContext):
     chat = update.effective_chat
     msg = update.effective_message
