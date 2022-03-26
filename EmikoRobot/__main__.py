@@ -227,7 +227,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<b>Hi I'm Lelouch robot!</b>\n<b>Protecting Group Since:</b> <code>{uptime}</code>",
+            f"<b>Kyuu Thaaak Rahe Ho 🥴 Abhi Ham Zinda Ha 🥴</b> <code>{uptime}</code>",
             parse_mode=ParseMode.HTML
        )
 
