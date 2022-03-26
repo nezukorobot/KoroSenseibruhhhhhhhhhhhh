@@ -748,7 +748,6 @@ def invite(update: Update, context: CallbackContext):
             "I can only give you invite links for supergroups and channels, sorry!",
         )
 
-
 @connection_status
 def adminlist(update, context):
     chat = update.effective_chat  # type: Optional[Chat] -> unused variable
