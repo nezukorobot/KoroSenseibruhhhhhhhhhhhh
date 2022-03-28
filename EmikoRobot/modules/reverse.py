@@ -38,7 +38,7 @@ def reverse(update: Update, context: CallbackContext):
         elif reply.document:
             file_id = reply.document.file_id
         else:
-            msg.reply_text("Reply to an image or sticker to lookup.")
+            msg.reply_text(" photo ko toh reply karna re ma bhagwan thodena hu .")
             return
         image_file = bot.get_file(file_id)
         image_file.download(imagename)
@@ -68,7 +68,7 @@ def reverse(update: Update, context: CallbackContext):
             urllib.request.urlretrieve(img_link, imagename)
         except HTTPError as HE:
             if HE.reason == "Not Found":
-                msg.reply_text("Image not found.")
+                msg.reply_text("Yeh toh bhai google bhi na bata para .")
                 return
             if HE.reason == "Forbidden":
                 msg.reply_text(
