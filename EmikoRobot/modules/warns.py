@@ -3,9 +3,9 @@ import re
 from typing import Optional
 
 import telegram
-from Tianabot import TIGERS, WOLVES, dispatcher
-from Tianabot.modules.disable import DisableAbleCommandHandler
-from Tianabot.modules.helper_funcs.chat_status import (
+from EmikoRobot import TIGERS, WOLVES, dispatcher
+from EmikoRobot.modules.disable import DisableAbleCommandHandler
+from EmikoRobot.modules.helper_funcs.chat_status import (
     bot_admin,
     can_restrict,
     is_user_admin,
@@ -14,16 +14,16 @@ from Tianabot.modules.helper_funcs.chat_status import (
     user_admin_no_reply,
     can_delete,
 )
-from Tianabot.modules.helper_funcs.extraction import (
+from EmikoRobot.modules.helper_funcs.extraction import (
     extract_text,
     extract_user,
     extract_user_and_text,
 )
-from Tianabot.modules.helper_funcs.filters import CustomFilters
-from Tianabot.modules.helper_funcs.misc import split_message
-from Tianabot.modules.helper_funcs.string_handling import split_quotes
-from Tianabot.modules.log_channel import loggable
-from Tianabot.modules.sql import warns_sql as sql
+from EmikoRobot.modules.helper_funcs.filters import CustomFilters
+from EmikoRobot.modules.helper_funcs.misc import split_message
+from EmikoRobot.modules.helper_funcs.string_handling import split_quotes
+from EmikoRobot.modules.log_channel import loggable
+from EmikoRobot.modules.sql import warns_sql as sql
 from telegram import (
     CallbackQuery,
     Chat,
@@ -45,7 +45,7 @@ from telegram.ext import (
     run_async,
 )
 from telegram.utils.helpers import mention_html
-from Tianabot.modules.sql.approve_sql import is_approved
+from EmikoRobot.modules.sql.approve_sql import is_approved
 
 WARN_HANDLER_GROUP = 9
 CURRENT_WARNING_FILTER_STRING = "<b>Current warning filters in this chat:</b>\n"
