@@ -81,10 +81,9 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Lelouch V Britania is always ready to server you master [❤️](https://telegra.ph/file/12b27bd51f3d1efaddb2f.mp4)
+Lelouch V Britania is always ready to server you master.  [❤️](https://telegra.ph/file/12b27bd51f3d1efaddb2f.mp4)
 ────────────────────────
-────────────────────────
-✪ Hit /help to see my available commands.
+✪ Hit /help to see my available commands and then see my magic.
 """
 
 buttons = [
