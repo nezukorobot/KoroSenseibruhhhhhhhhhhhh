@@ -46,7 +46,7 @@ def afk(update: Update, context: CallbackContext):
     sql.set_afk(update.effective_user.id, reason)
     fname = update.effective_user.first_name
     try:
-        update.effective_message.reply_text("{} hn hn ja ja kisi ko teri yaad nahi ayegi{}".format(fname, notice))
+        update.effective_message.reply_text("{} You think we give a damn that you are going ?? Nah I am just kidding lmao {}".format(fname, notice))
     except BadRequest:
         pass
 
