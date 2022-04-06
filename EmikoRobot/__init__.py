@@ -176,7 +176,7 @@ else:
 
     DB_URL = Config.SQLALCHEMY_DATABASE_URI
     MONGO_DB_URI = Config.MONGO_DB_URI
-    ARQ_API = Config.ARQ_API_KEY
+    ARQ_API_KEY = Config.ARQ_API_KEY
     ARQ_API_URL = Config.ARQ_API_URL
     DONATION_LINK = Config.DONATION_LINK
     LOAD = Config.LOAD
@@ -197,13 +197,13 @@ else:
     SUPPORT_CHAT = Config.SUPPORT_CHAT
     SPAMWATCH_SUPPORT_CHAT = Config.SPAMWATCH_SUPPORT_CHAT
     SPAMWATCH_API = Config.SPAMWATCH_API
-    SESSION_STRING = Config.SESSION_STRING
     INFOPIC = Config.INFOPIC
     BOT_USERNAME = Config.BOT_USERNAME
     STRING_SESSION = Config.STRING_SESSION
     LASTFM_API_KEY = Config.LASTFM_API_KEY
     CF_API_KEY = Config.CF_API_KEY
-
+    BOT_ID = "1851185164"
+    BOT_USERNAME = "LelouchXRobot"
     try:
         BL_CHATS = {int(x) for x in Config.BL_CHATS or []}
     except ValueError:
