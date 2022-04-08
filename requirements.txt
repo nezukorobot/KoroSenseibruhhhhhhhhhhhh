@@ -40,7 +40,7 @@ html2text==2020.1.16
 httpcore==0.14.7
 httpx==0.22.0
 idna==3.3
-img2pdf==0.4.3
+img2pdf==0.4.4
 jikanpy==4.3.2
 lxml==4.6.3
 markdown2==2.4.2
