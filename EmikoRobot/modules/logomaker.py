@@ -15,7 +15,7 @@ from EmikoRobot import OWNER_ID
 from EmikoRobot.events import register
 from EmikoRobot import telethn
 from PIL import Image, ImageDraw, ImageFont
-from EmikoRobot import SUPPORT_GROUP
+from EmikoRobot import SUPPORT_CHAT
 
 LOGO_LINKS            = ["https://telegra.ph/file/d1838efdafce9fe611d0c.jpg",
                          "https://telegra.ph/file/c1ff2d5ec5e1b5bd1b200.jpg",
@@ -281,7 +281,7 @@ async def lego(event):
     if os.path.exists(fname):
             os.remove(fname)
  except Exception as e:
-    await event.reply(f'Error, Report @{SUPPORT_GROUP}')
+    await event.reply(f'Error, Report @{SUPPORT_CHAT}')
 
 __help__ = """
  - /logo <text> :  Create your logo with your name
