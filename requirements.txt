@@ -11,7 +11,7 @@ better-profanity==0.7.0
 bing-image-downloader==1.1.2
 bleach==4.1.0
 Brotli==1.0.9
-cachetools==4.2.2
+cachetools==5.2.0
 certifi==2021.10.8
 chardet==3.0.4
 charset-normalizer==2.0.12
