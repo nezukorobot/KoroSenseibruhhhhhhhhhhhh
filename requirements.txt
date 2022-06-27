@@ -87,7 +87,7 @@ sniffio==1.2.0
 soupsieve==2.3.2
 spamwatch==0.3.0
 speedtest==0.0.1
-SQLAlchemy==1.4.34
+SQLAlchemy==1.4.39
 telegraph==2.1.0
 Telethon==1.24.0
 TgCrypto==1.2.3
