@@ -104,4 +104,4 @@ wikipedia==1.4.0
 yarl==1.7.2
 youtube-search==2.1.0
 youtube-search-python==1.6.3
-yt-dlp==2022.3.8.2
+yt-dlp==2022.6.29
