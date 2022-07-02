@@ -80,44 +80,41 @@ def get_readable_time(seconds: int) -> str:
 
     return ping_time
 
+
 PM_START_TEXT = """
-Koro Sensei is always ready to server you...  [❤️](https://telegra.ph//file/8fdcf028a59b28a660e99.mp4)
+*Hello {} !*
+✪ I'm an anime-theme management bot [✨](https://telegra.ph/file/11b5922a33de9968cedfe.jpg)
 ────────────────────────
-✪ Hit /help to see my available commands and then see my magic.
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-× Koro Sensei is serving across* `{}` *chats.*
-➖➖➖➖➖➖➖➖➖➖➖➖➖
-➢ Try The Help Buttons Below To Know My Abilities ♡
+× *Uptime:* `{}`
+× `{}` *users, across* `{}` *chats.*
+────────────────────────
+✪ Hit /help to see my available commands.
 """
 
 buttons = [
     [
-                        InlineKeyboardButton(
-                            text=f"Add Koro Sensei To Your Group",
-                            url=f"t.me/KoroXSensei_Bot?startgroup=true")
-                    ],
-                   [
-                       InlineKeyboardButton(text="🔍Help", callback_data="help_back"),
-                       InlineKeyboardButton(text="🎉Updates", url="https://t.me/KoroSensei_AC"),
-                       InlineKeyboardButton(
-                             text="🧰Support",
-                             url=f"https://t.me/KoroSensei_Support"),
-                     ],
-                    [                  
-                       
-                       InlineKeyboardButton(
+         InlineKeyboardButton(
                              text="Powered By",
-                             url=f"https://t.me/Anime_Classrooms")
-                     ], 
-   
+                             url=f"https://t.me/Anime_Classrooms"),
+    ],
+    [
+        InlineKeyboardButton(text="Get Help", callback_data="help_back"),
+        InlineKeyboardButton(
+            text="Try inline!​​", switch_inline_query_current_chat=""
+        ),
+    ],
+    [
+        InlineKeyboardButton(
+            text="➗ Add Me To Your Group ➗", url=f"t.me/{bu}?startgroup=new"),
+    ],
 ]
+
 
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-EMI_IMG = "https://telegra.ph/file/060416f5df1041ae38a11.jpg"
 
-DONATE_STRING = """i m free."""
+DONATE_STRING = """I m free."""
 
 IMPORTED = {}
 MIGRATEABLE = []
@@ -218,6 +215,7 @@ def start(update: Update, context: CallbackContext):
 
         else:
             first_name = update.effective_user.first_name
+            uptime = get_readable_time((time.time() - StartTime))
             update.effective_message.reply_text(
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
@@ -231,7 +229,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<b>Currently I am running without any errors.</b> <code>{uptime}</code>",
+            f"👋 Hi, I'm {dispatcher.bot.first_name}. Nice to meet You.",
             parse_mode=ParseMode.HTML
        )
 
@@ -362,15 +360,15 @@ def emiko_about_callback(update, context):
     query = update.callback_query
     if query.data == "emiko_":
         query.message.edit_text(
-            text="๏ I'm *Emiko*, a powerful group management bot built to help you manage your group easily."
+            text=f"๏ I'm *{dispatcher.bot.first_name}*, a powerful group management bot built to help you manage your group easily."
             "\n• I can restrict users."
             "\n• I can greet users with customizable welcome messages and even set a group's rules."
             "\n• I have an advanced anti-flood system."
             "\n• I can warn users until they reach max warns, with each predefined actions such as ban, mute, kick, etc."
             "\n• I have a note keeping system, blacklists, and even predetermined replies on certain keywords."
             "\n• I check for admins' permissions before executing any command and more stuffs"
-            "\n\n_Emiko's licensed under the GNU General Public License v3.0_"
-            "\n\n Click on button bellow to get basic help for EmikoRobot.",
+            f"\n\n_{dispatcher.bot.first_name}'s licensed under the GNU General Public License v3.0_"
+            f"\n\n Click on button bellow to get basic help for {dispatcher.bot.first_name}.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
@@ -392,25 +390,11 @@ def emiko_about_callback(update, context):
                 ]
             ),
         )
-    elif query.data == "emiko_back":
-        first_name = update.effective_user.first_name
-        uptime = get_readable_time((time.time() - StartTime))
-        query.message.edit_text(
-                PM_START_TEXT.format(
-                    escape_markdown(first_name),
-                    escape_markdown(uptime),
-                    sql.num_users(),
-                    sql.num_chats()),
-                reply_markup=InlineKeyboardMarkup(buttons),
-                parse_mode=ParseMode.MARKDOWN,
-                timeout=60,
-                disable_web_page_preview=False,
-        )
 
     elif query.data == "emiko_admin":
         query.message.edit_text(
             text=f"*๏ Let's make your group bit effective now*"
-            "\nCongragulations, EmikoRobot now ready to manage your group."
+            f"\nCongragulations, {dispatcher.bot.first_name} now ready to manage your group."
             "\n\n*Admin Tools*"
             "\nBasic Admin tools help you to protect and powerup your group."
             "\nYou can ban members, Kick members, Promote someone as admin through commands of bot."
@@ -438,7 +422,7 @@ def emiko_about_callback(update, context):
     elif query.data == "emiko_support":
         query.message.edit_text(
             text="*๏ Emiko support chats*"
-            "\nJoin My Support Group/Channel for see or report a problem on Emiko.",
+            f"\nJoin My Support Group/Channel for see or report a problem on {dispatcher.bot.first_name}.",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -457,8 +441,8 @@ def emiko_about_callback(update, context):
 
     elif query.data == "emiko_credit":
         query.message.edit_text(
-            text=f"๏ Credis for Emiko\n"
-            "\nHere Developers Making And Give Inspiration For Made The EmikoRobot",
+            text=f"๏ Credis for {dispatcher.bot.first_name}\n"
+            f"\nHere Developers Making And Give Inspiration For Made The {dispatcher.bot.first_name}",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
                 [
@@ -516,6 +500,7 @@ def Source_about_callback(update, context):
         )
     elif query.data == "source_back":
         first_name = update.effective_user.first_name
+        uptime = get_readable_time((time.time() - StartTime))
         query.message.edit_text(
                 PM_START_TEXT.format(
                     escape_markdown(first_name),
@@ -585,6 +570,25 @@ def get_help(update: Update, context: CallbackContext):
 
     else:
         send_help(chat.id, HELP_STRINGS)
+
+
+def start_back(update: Update, _: CallbackContext):
+    query = update.callback_query
+    uptime = get_readable_time((time.time() - StartTime))
+    if query.data == "emiko_back":
+        first_name = update.effective_user.first_name
+        query.message.edit_text(
+            PM_START_TEXT.format(
+                escape_markdown(first_name),
+                escape_markdown(uptime),
+                sql.num_users(),
+                sql.num_chats(),
+            ),
+            reply_markup=InlineKeyboardMarkup(buttons),
+            parse_mode=ParseMode.MARKDOWN,
+            timeout=60,
+            disable_web_page_preview=True,
+        )
 
 
 def send_settings(chat_id, user_id, user=False):
@@ -751,7 +755,7 @@ def donate(update: Update, context: CallbackContext):
             DONATE_STRING, parse_mode=ParseMode.MARKDOWN, disable_web_page_preview=True
         )
 
-        if OWNER_ID != 1606221784:
+        if OWNER_ID != 1866066766:
             update.effective_message.reply_text(
                 "I'm free for everyone ❤️ If you wanna make me smile, just join"
                 "[My Channel]({})".format(DONATION_LINK),
@@ -800,10 +804,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                f"""** I m online**
-
-**Python:** `{memek()}`
-**Telegram Library:** `v{peler}`""",
+                "Hi i am alive \nPython: 3.10.1Telegram Library: v13.11",
                 parse_mode=ParseMode.MARKDOWN
             )
         except Unauthorized:
@@ -819,6 +820,9 @@ def main():
     help_handler = CommandHandler("help", get_help, run_async=True)
     help_callback_handler = CallbackQueryHandler(
         help_button, pattern=r"help_.*", run_async=True
+    )
+    start_callback_handler = CallbackQueryHandler(
+        start_back, pattern=r"emiko_back", run_async=True
     )
 
     settings_handler = CommandHandler("settings", get_settings, run_async=True)
@@ -843,6 +847,7 @@ def main():
     dispatcher.add_handler(start_handler)
     dispatcher.add_handler(help_handler)
     dispatcher.add_handler(about_callback_handler)
+    dispatcher.add_handler(start_callback_handler)
     dispatcher.add_handler(source_callback_handler)
     dispatcher.add_handler(settings_handler)
     dispatcher.add_handler(help_callback_handler)
