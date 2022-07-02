@@ -81,28 +81,34 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Lelouch V Britania is always ready to server you master.  [❤️](https://telegra.ph/file/12b27bd51f3d1efaddb2f.mp4)
+Lelouch is always ready to server you...  [❤️](https://telegra.ph//file/8fdcf028a59b28a660e99.mp4)
 ────────────────────────
 ✪ Hit /help to see my available commands and then see my magic.
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+◈ *Uptime:* `{}`
+◈ `{}` *users, across* `{}` *chats.*
+➖➖➖➖➖➖➖➖➖➖➖➖➖
+➢ Try The Help Buttons Below To Know My Abilities ♡
 """
 
 buttons = [
-   [
+    [
                         InlineKeyboardButton(
-                            text=f"Add Lelouch To Your Group",
-                            url=f"t.me/LelouchXRobot?startgroup=true")
+                            text=f"Add Koro Sensei To Your Group",
+                            url=f"t.me/KoroXSensei_Bot?startgroup=true")
                     ],
                    [
                        InlineKeyboardButton(text="🔍Help", callback_data="help_back"),
-                       InlineKeyboardButton(text="❔ Guide", url="https://t.me/Lelouch_update_channel/8"),
+                       InlineKeyboardButton(text="🎉Updates", url="https://t.me/KoroSensei_AC"),
+                       InlineKeyboardButton(
+                             text="🧰Support",
+                             url=f"https://t.me/KoroSensei_Support"),
                      ],
                     [                  
+                       
                        InlineKeyboardButton(
-                             text="🧰 Support",
-                             url=f"https://t.me/lelouchsupportchat"),
-                       InlineKeyboardButton(
-                             text="⚙️ Updates",
-                             url=f"https://t.me/Lelouch_update_channel")
+                             text="Powered By",
+                             url=f"https://t.me/Anime_Classrooms")
                      ], 
    
 ]
@@ -110,7 +116,7 @@ buttons = [
 HELP_STRINGS = """
 Click on the button bellow to get description about specifics command."""
 
-EMI_IMG = "https://telegra.ph/file/94f6eeed7eb44033f3f6e.mp4"
+EMI_IMG = "https://telegra.ph/file/060416f5df1041ae38a11.jpg"
 
 DONATE_STRING = """i m free."""
 
@@ -226,7 +232,7 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            f"<b>Kyuu Thaaak Rahe Ho 🥴 Abhi Ham Zinda Ha 🥴</b> <code>{uptime}</code>",
+            f"<b>Currently I am running without any errors.</b> <code>{uptime}</code>",
             parse_mode=ParseMode.HTML
        )
 
