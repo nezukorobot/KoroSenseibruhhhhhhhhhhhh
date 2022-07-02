@@ -81,7 +81,7 @@ def get_readable_time(seconds: int) -> str:
 
 
 PM_START_TEXT = """
-Lelouch is always ready to server you...  [❤️](https://telegra.ph//file/8fdcf028a59b28a660e99.mp4)
+Koro Sensei is always ready to server you...  [❤️](https://telegra.ph//file/8fdcf028a59b28a660e99.mp4)
 ────────────────────────
 ✪ Hit /help to see my available commands and then see my magic.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
