@@ -795,7 +795,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                f"""**Lelouch Robot Started!**
+                f"""** Findind Errors**
 
 **Python:** `{memek()}`
 **Telegram Library:** `v{peler}`""",
