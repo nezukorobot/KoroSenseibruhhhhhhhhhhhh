@@ -101,7 +101,7 @@ Time Zones:- {tom}
 Top Level Domain:- {lanester}
 wikipedia:- {wiki}</b>
 
-Gathered By Lelouch Robot ❤️.</b>
+Gathered By Koro Sensei Robot ❤️.</b>
 """
 
     await borg.send_message(
