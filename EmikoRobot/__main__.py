@@ -15,6 +15,7 @@ from EmikoRobot import (
     ALLOW_EXCL,
     CERT_PATH,
     DONATION_LINK,
+    BOT_USERNAME as bu,
     LOGGER,
     OWNER_ID,
     PORT,
@@ -78,7 +79,6 @@ def get_readable_time(seconds: int) -> str:
     ping_time += ":".join(time_list)
 
     return ping_time
-
 
 PM_START_TEXT = """
 Koro Sensei is always ready to server you...  [❤️](https://telegra.ph//file/8fdcf028a59b28a660e99.mp4)
