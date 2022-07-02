@@ -1,2 +1,4 @@
-KELVIN = "Koro Sensei Owner😎🤝"
-"Mera Owner😎🤝"
+KELVIN = (
+"Koro Sensei Owner😎🤝",
+"Mera Owner😎🤝",
+)
