@@ -268,7 +268,7 @@ async def apk(e):
             + app_link
             + "'>View in Play Store</a>"
         )
-        app_details += "\n\n===> Lelouch <==="
+        app_details += "\n\n===> Koro Sensei <==="
         await e.reply(app_details, link_preview=True, parse_mode="HTML")
     except IndexError:
         await e.reply("No result found in search. Please enter **Valid app name**")
@@ -287,7 +287,7 @@ __help__ = """
 ❂ /github <username>*:* Get information about a GitHub user.
 ❂ /country <country name>*:* Gathering info about given country
 ❂ /imdb <Movie name>*:* Get full info about a movie with imdb.com
-❂ Lelouch <query>*:* Emiko answers the query
+❂ Koro Sensei <query>*:* Koro answers the query
 
-  💡Ex: `Lelouch where is India?`
+  💡Ex: `Koro Sensei where is India?`
 """
