@@ -801,7 +801,7 @@ def main():
         try:
             dispatcher.bot.sendMessage(
                 f"@{SUPPORT_CHAT}", 
-                f"""** Errors Dound - 16 \nErrors Resolved - 15**
+                f"""** I m online**
 
 **Python:** `{memek()}`
 **Telegram Library:** `v{peler}`""",
