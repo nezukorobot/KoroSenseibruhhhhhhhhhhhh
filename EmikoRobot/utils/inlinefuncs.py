@@ -122,20 +122,20 @@ async def alive_function(answers):
     )
 
     msg = f"""
-**[Lelouch Robot ❤️](https://t.me/lelouchsupportchat):**
+**[Koro Sensei ❤️](https://t.me/KoroXSensei_bot):**
 **MainBot:** `{bot_state}`
 **UserBot:** `{ubot_state}`
 **Python:** `{pyver.split()[0]}`
 **Pyrogram:** `{pyrover}`
 **MongoDB:** `{mongover}`
 **Platform:** `{sys.platform}`
-**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/LelouchXRobot)
+**Profiles:** [BOT](t.me/{BOT_USERNAME}) | [UBOT](t.me/KoroXSensei_bot)
 """
     answers.append(
         InlineQueryResultArticle(
             title="Alive",
             description="Check Bot's Stats",
-            thumb_url="https://telegra.ph/file/641407ee736fb9af9a843.jpg",
+            thumb_url="https://telegra.ph/file/ef256528b754f0386d191.jpg",
             input_message_content=InputTextMessageContent(
                 msg, disable_web_page_preview=True
             ),
