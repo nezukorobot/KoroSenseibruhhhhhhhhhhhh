@@ -251,7 +251,7 @@ def info(update: Update, context: CallbackContext):
     else:
         return
 
-    rep = message.reply_text("<code>Collection Information From Dezilleius!!!</code>", parse_mode=ParseMode.HTML)
+    rep = message.reply_text("<code>Collection Information From Anime Classroom DB!!!</code>", parse_mode=ParseMode.HTML)
 
     text = (
         f"╔═━「<b> Appraisal results:</b> 」\n"
@@ -353,9 +353,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Updates", url="https://t.me/Lelouch_update_channel"),
+                                "Updates", url="https://t.me/KoroSensei_AC"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/Lelouch_update_channel/8")
+                                "Disaster", url="https://t.me/KoroSensei_Support")
                         ],
                     ]
                 ),
@@ -371,9 +371,9 @@ def info(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                "Updates", url="https://t.me/Lelouch_update_channel/8"),
+                                "Updates", url="https://t.me/KoroSensei_AC"),
                             InlineKeyboardButton(
-                                "Disaster", url="https://t.me/Lelouch_update_channel/8")
+                                "Disaster", url="https://t.me/KoroSensei_Support")
                         ],
                     ]
                 ),
@@ -445,7 +445,7 @@ def set_about_me(update: Update, context: CallbackContext):
 
 @sudo_plus
 def stats(update: Update, context: CallbackContext):
-    stats = "❂ <b>Stats For <a href='https://t.me/LelouchXRobot'>Lelouch Robot</a>:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
+    stats = "❂ <b>Stats For <a href='https://t.me/KoroXSensei_bot'>Koro Sensei Robot</a>:</b>\n" + "\n".join([mod.__stats__() for mod in STATS])
     result = re.sub(r"(\d+)", r"<code>\1</code>", stats)
     update.effective_message.reply_text(
         result,
