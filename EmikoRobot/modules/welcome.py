@@ -218,7 +218,7 @@ def new_member(update: Update, context: CallbackContext):  # sourcery no-metrics
             # Welcome Sudos
             if new_mem.id in DRAGONS:
                 update.effective_message.reply_text(
-                    "Huh! This person has Lelouch supremacy! Stay Alert!",
+                    "Huh! This person has Koro Sensei supremacy! Stay Alert!",
                     reply_to_message_id=reply,
                 )
                 continue
