@@ -100,7 +100,7 @@ buttons = [
     [
         InlineKeyboardButton(text="Get Help", callback_data="help_back"),
         InlineKeyboardButton(
-            text="Try inline!​​", switch_inline_query_current_chat=""
+            text="Updates", url=f"t.me/KoroSensei_AC"
         ),
     ],
     [
