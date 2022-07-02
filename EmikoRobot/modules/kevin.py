@@ -1,6 +1,6 @@
 import html
 import random
-import EmikoRobot.modules.kelvinstring.py as kelvinstring
+import EmikoRobot.modules.kelvinstring as kelvinstring
 from EmikoRobot import dispatcher
 from telegram import ParseMode, Update, Bot
 from EmikoRobot.modules.disable import DisableAbleCommandHandler
