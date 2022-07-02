@@ -97,22 +97,22 @@ def gban(update: Update, context: CallbackContext):
 
     if int(user_id) in DRAGONS:
         message.reply_text(
-            "This person has Lelouch supremacy..",
+            "This person has Koro Sensei supremacy..",
         )
         return
 
     if int(user_id) in DEMONS:
         message.reply_text(
-            "This person has Lelouch supremacy.. *grabs popcorn*",
+            "This person has Koro Sensei supremacy.. *grabs popcorn*",
         )
         return
 
     if int(user_id) in TIGERS:
-        message.reply_text("This person has Lelouch supremacy..!! They cannot be banned!")
+        message.reply_text("This person has Koro Sensei supremacy..!! They cannot be banned!")
         return
 
     if int(user_id) in WOLVES:
-        message.reply_text("This person has Lelouch supremacy..")
+        message.reply_text("This person has Koro Sensei supremacy..")
         return
 
     if user_id == bot.id:
