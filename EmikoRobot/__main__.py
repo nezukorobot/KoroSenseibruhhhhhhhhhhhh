@@ -85,8 +85,8 @@ Koro Sensei is always ready to server you...  [❤️](https://telegra.ph//file/
 ────────────────────────
 ✪ Hit /help to see my available commands and then see my magic.
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
-◈ *Uptime:* `{}`
-◈ `{}` *users, across* `{}` *chats.*
+× *Uptime:* `{}`
+× `{}` *users, across* `{}` *chats.*
 ➖➖➖➖➖➖➖➖➖➖➖➖➖
 ➢ Try The Help Buttons Below To Know My Abilities ♡
 """
