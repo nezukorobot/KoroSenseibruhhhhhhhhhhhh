@@ -68,7 +68,7 @@ def kukiadd(update: Update, context: CallbackContext) -> str:
             )
         else:
             update.effective_message.edit_text(
-                "Lelouch Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
+                "Koro Sensei Chatbot enable by {}.".format(mention_html(user.id, user.first_name)),
                 parse_mode=ParseMode.HTML,
             )
 
@@ -139,7 +139,7 @@ def list_all_chats(update: Update, context: CallbackContext):
     update.effective_message.reply_text(text, parse_mode="HTML")
 
 __help__ = """
-Lelouch has a special feature that lets the bot talk and provide a more interactive group chat experience.
+Koro Sensei has a special feature that lets the bot talk and provide a more interactive group chat experience.
 *Admins only Commands*:
  • `/Chatbot`*:* Shows chatbot control panel
   
