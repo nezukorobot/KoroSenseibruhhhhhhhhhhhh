@@ -453,7 +453,7 @@ async def cb_handler(client: pbot, query: CallbackQuery):
 __mod_name__ = "Img Editor​"
 
 __help__ = """
-Here is the Img Editor module for Lelouch
+Here is the Img Editor module for Koro Sensei
 /edit - To edit an image
 /rmbg- To remove background from image
 """
